@@ -1,0 +1,110 @@
+<main class="main">
+  <div class="profile">
+    <div class="profile__pic">
+      <img class="profile__pic-img" src="profile.jpg" alt="puede ser una fotografía de maria alicia cabrera">
+    </div>
+    <div class="profile__name">
+      <h1 class="profile__name-title">Maria Alicia</h1>
+    </div>
+  </div>
+  <a class="scroll" href="#">
+    Scroll down
+  </a>
+</main>
+
+<style>
+  .main {
+    padding-top: var(--header);
+    min-height: 100vh;
+    background: var(--cream);
+    display: grid;
+    place-items: center;
+  }
+
+  .profile__pic {
+    width: 20.2rem;
+    height: 20.2rem;
+    margin-top: calc(var(--header) * -1);
+    position: relative;
+  }
+
+  .profile__pic::before {
+    content: "";
+    position: absolute;
+    top: 16rem;
+    left: -5rem;
+    width: 12rem;
+    height: 12rem;
+    background-image: url("profile-book.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .profile__pic::after {
+    content: "";
+    position: absolute;
+    top: 16rem;
+    right: -5rem;
+    width: 12rem;
+    height: 12rem;
+    background-image: url("profile-flower.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .profile__pic-img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .profile__name {
+    font-size: var(--font-xxl);
+    line-height: 0.9;
+    text-align: center;
+    margin-top: 9.5rem;
+    max-width: 20.2rem;
+  }
+
+  .scroll {
+    position: absolute;
+    bottom: 4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-xs);
+    color: var(--black);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    animation: scrollDown 1.5s infinite;
+  }
+
+  .scroll::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("scroll-down.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @keyframes scrollDown {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(0.5rem);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+</style>
