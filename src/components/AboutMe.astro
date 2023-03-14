@@ -1,0 +1,204 @@
+<section class="aboutme container" id="aboutme">
+  <div class="profile">
+    <img class="profile__img" src="profile-about.png" alt="María Alicia Cabrera Mejía" />
+  </div>
+  <article class="content">
+    <h3 class="name">María Alicia Cabrera Mejía</h3>
+    <p class="description">Nació en Socha – Boyacá. Poeta, escritora, abogada y periodista. Miembro de la Academia Boyacense de la Lengua, expresidenta del Centro Poético Colombiano y Socia Honoraria de El Pequeño Parnaso.
+
+Adelantó estudios de Comunicación Social y Periodismo en la Universidad de la Sabana, Derecho y Ciencias Políticas en la Universidad Católica de Colombia. Se especializó en Derecho Administrativo en el Colegio Mayor de Nuestra Señora del Rosario. Realizó el postgrado Desarrollo del Talento Humano para el Siglo XXI con la Universidad del Valle. Magister en Escrituras Creativas de la Universidad Nacional.
+
+Diplomado en Escritura Creativa en el Instituto Caro y Cuervo. Asistente al Taller de escritores de la Universidad Central. Servidora pública durante 25 años. Fundadora y Directora de la Fundación Trabajo Común durante 14 años. Secretaria de Asuntos Internacionales de la Confederación Democrática de Pensionados.</p>
+
+    <hr>
+    <h4 class="awards">condecoraciones</h4>
+    <ul class="awards__list">
+      <li class="awards__item">
+        <img class="awards__img" src="concejo-bogota.png" alt="puede ser una imagen del consejo de bogotá">
+          <div class="awards__item-description">
+            <h5 class="awards__title">Proposición</h5>
+            <p class="awards__desc">Consejo de Bogotá 2005.</p>
+          </div>
+      </li>
+      <li class="awards__item">
+        <img class="awards__img" src="centro-poetico.png" alt="puede ser una imagen del centro poético colombiano">
+          <div class="awards__item-description">
+            <h5 class="awards__title">Medalla de Oro</h5>
+            <p class="awards__desc">Centro Poético Colombiano 2013.</p>
+          </div>
+      </li>
+      <li class="awards__item">
+        <img class="awards__img" src="centro-poetico.png" alt="puede ser una imagen del centro poético colombiano">
+          <div class="awards__item-description">
+            <h5 class="awards__title">Lira de Oro</h5>
+            <p class="awards__desc">Centro Poético Colombiano 2019.</p>
+          </div>
+      </li>
+    </ul>
+  </article>
+</section>
+
+<style>
+  .aboutme {
+    padding: 0 1rem 4rem;
+  }
+
+  .profile {
+    display: block;
+    margin: 4rem auto;
+    width: 22.8rem;
+    height: 22.8rem;
+    position: relative;
+  }
+
+  .profile::before {
+    content: '';
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 0;
+    left: 17rem;
+    background-image: url('profile-hand.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .profile::after {
+    content: '';
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 18rem;
+    left: -3rem;
+    background-image: url('profile-glass.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .profile__img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-family: var(--font-title);
+    font-size: var(--font-md);
+    text-align: center;
+  }
+
+  .description {
+    font-family: var(--font-body);
+    font-size: var(--font-normal);
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 75ch;
+    margin: auto;
+  }
+
+  hr {
+    border-top: 1.5px solid var(--color-gray);
+    max-width: 85ch;
+    margin: 3rem auto 0;
+  }
+
+  .awards {
+    font-family: var(--font-title);
+    font-size: var(--font-sm);
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .awards__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 1.5rem;
+  }
+
+  .awards__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+  }
+
+  .awards__img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    box-shadow: 0 0 .3rem var(--grey);
+    border-radius: 50%;
+  }
+
+  .awards__item-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .awards__title {
+    margin: 2.5rem 0 0;
+    line-height: 0;
+    font-family: var(--font-title);
+    font-size: var(--font-xm);
+  }
+
+  .awards__desc {
+    margin-top: 1.5rem;
+    font-family: var(--font-body);
+    font-size: var(--font-normal);
+  }
+
+  @media (min-width: 768px) {
+    .aboutme {
+      display: grid;
+      grid-template-columns: 1fr 30rem;
+      place-items: center;
+    }
+
+    .profile {
+      margin-top: -8rem;
+      margin-left: -3rem;
+      width: 35rem;
+      height: 35rem;
+      order: 2;
+      z-index: -1;
+    }
+
+    .profile::before {
+      width: 15rem;
+      height: 15rem;
+      top: 0;
+      left: 25rem;
+    }
+
+    .profile::after {
+      width: 15rem;
+      height: 15rem;
+      top: 25rem;
+      left: -5rem;
+    }
+
+    .name {
+      font-size: var(--font-xl);
+      text-align: left;
+      margin: 8rem auto 0;
+    }
+
+    .description {
+      font-size: var(--font-normal);
+      text-align: left;
+      max-width: 75ch;
+      margin: 2rem 0 0;
+      z-index: 1;
+    }
+  }
+</style>
