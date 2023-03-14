@@ -46,7 +46,7 @@ const { title } = Astro.props;
     --font-lg: 3.5rem;
     --font-md: 2.8rem;
     --font-sm: 2.4rem;
-    --font-normal: 1.9rem;
+    --font-normal: 1.6rem;
     --font-xs: 1.1rem;
     /* colours */
     --black: #000000;
@@ -56,10 +56,17 @@ const { title } = Astro.props;
     --header: 60px;
   }
 
+  @media (min-width: 768px) {
+    :root {
+      --font-xxl: 6.5rem;
+    }
+  }
+
   body {
     font-size: 1.6rem;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
   }
 
   h1,h2,h3,h4,h5,h6 {
@@ -86,6 +93,23 @@ const { title } = Astro.props;
     max-width: 120rem;
     margin: 0 auto;
     padding: 0 2rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--black);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--cream);
+    transition: background .2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--grey);
   }
 
 </style>
