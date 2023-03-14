@@ -4,6 +4,6 @@ import react from '@astrojs/react'
 
 export default defineConfig({
   integrations: [react()],
-  site: 'mariaalicia.vehement.co',
-  base: '/'
+  site: 'https://abouthernan.github.io',
+  base: '/front-maria-alicia-cabrera'
 })
