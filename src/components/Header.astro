@@ -5,7 +5,7 @@ import { ToggleMenu } from "./ToggleMenu";
 <header class="header">
   <a href="/" class="logo">María Alicia</a>
   <nav class="nav">
-    <a class="nav__link" href="/about">About</a>
+    <a class="nav__link" href="#aboutme">About</a>
     <a class="nav__link" href="/blog">Blog</a>
     <a class="nav__link" href="/contact">Contact</a>
   </nav>
@@ -24,6 +24,9 @@ import { ToggleMenu } from "./ToggleMenu";
     width: 100%;
     top: 0;
     left: 0;
+    right: 0;
+    max-width: 120rem;
+    margin: 0 auto;
   }
 
   .logo {
@@ -69,6 +72,34 @@ import { ToggleMenu } from "./ToggleMenu";
     padding: 0;
     margin: 0;
     font-size: var(--font-md);
+  }
+
+  @media (min-width: 768px) {
+    :global(.burger) {
+      display: none;
+    }
+
+    .nav {
+      position: static;
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      column-gap: 3rem;
+      align-items: center;
+      background: none;
+      transform: translateY(0);
+    }
+
+    .nav__link {
+      color: var(--black);
+      font-size: var(--font-normal);
+      transition: opacity .3s ease-in-out;
+    }
+
+    .nav__link:hover {
+      opacity: 0.5;
+    }
   }
 
 </style>
