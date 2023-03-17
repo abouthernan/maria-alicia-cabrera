@@ -1,0 +1,73 @@
+---
+import { GallerySwiper } from "./GallerySwiper"
+---
+
+<section class="section container">
+  <h2 class="title">Galería</h2>
+  <GallerySwiper client:visible />
+</section>
+
+<style>
+  section {
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: var(--font-xxl);
+  }
+
+  :global(.gallerySwiper .swiper-slide) {
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  :global(.gallerySwiper .gallery__content-img) {
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+  }
+
+
+  :global(.gallerySwiper .gallery__content-img .gallery__img) {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+
+  :global(.gallerySwiper .gallery__date) {
+    font-size: var(--font-sm);
+    font-family: var(--font-coursive);
+    color: var(--green);
+    display: inline-block;
+    width: 100%;
+    min-width: 25rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  :global(.gallerySwiper .gallery__card-title) {
+    display: block;
+    width: 100%;
+    min-width: 30rem;
+    padding-bottom: 2rem;
+  }
+
+  :global(.gallerySwiper .swiper-button-prev),
+  :global(.gallerySwiper .swiper-button-next) {
+    color: var(--green);
+    display: none;
+  }
+
+  :global(.gallerySwiper .swiper-pagination-bullet) {
+    background: var(--green);
+  }
+
+  @media (min-width: 768px) {
+    :global(.gallerySwiper .swiper-button-prev),
+    :global(.gallerySwiper .swiper-button-next) {
+      display: block;
+    }
+  }
+
+</style>
