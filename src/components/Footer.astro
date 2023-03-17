@@ -1,0 +1,65 @@
+---
+import { IoLogoInstagram, IoLogoFacebook, IoLogoWhatsapp } from 'react-icons/io5/index'
+---
+
+<footer class="footer">
+  <nav>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <IoLogoInstagram />
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <IoLogoFacebook />
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <IoLogoWhatsapp />
+    </a>
+  </nav>
+  <p>&copy; {new Date().getFullYear()} MARÍA ALICIA. Todos los derechos reservados. Powered by <a href="https://vehement.co">Vehement</a></p>
+</footer>
+
+<style>
+  .footer {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+  }
+
+  .footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  .footer nav a {
+    font-size: 2.4rem;
+    margin: 0 1rem;
+    color: var(--white);
+    transition: color 0.3s ease;
+  }
+
+  .footer nav a:hover {
+    color: var(--green);
+  }
+
+  .footer p {
+    margin: 0.2rem 0;
+  }
+
+  a{
+    transition: color 0.3s ease;
+  }
+
+  a:hover{
+    color: var(--green);
+  }
+
+  @media (min-width: 768px) {
+    .footer {
+      padding: 4rem 0;
+    }
+  })
+</style>
