@@ -16,6 +16,10 @@ import { GallerySwiper } from "./GallerySwiper"
     font-size: var(--font-xxl);
   }
 
+  :global(.gallerySwiper) {
+    margin-bottom: 2rem;
+  }
+
   :global(.gallerySwiper .swiper-slide) {
     max-width: 30rem;
     margin: 0 auto;
@@ -67,6 +71,10 @@ import { GallerySwiper } from "./GallerySwiper"
     :global(.gallerySwiper .swiper-button-prev),
     :global(.gallerySwiper .swiper-button-next) {
       display: block;
+    }
+
+    :global(.gallerySwiper) {
+      margin-bottom: 4rem;
     }
   }
 
