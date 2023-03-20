@@ -5,8 +5,8 @@ import { Nav } from "./Nav";
 
 <header class="header">
   <a href="/" class="logo">María Alicia</a>
-  <Nav client:load /> 
-  <ToggleMenu client:load />
+  <Nav client:media='(max-width: 768px)' /> 
+  <ToggleMenu client:media='(max-width: 768px)' />
 </header>
 
 <style>
