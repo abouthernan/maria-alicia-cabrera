@@ -1,0 +1,23 @@
+[
+  {
+    "id": 3,
+    "img": "book-banner.png",
+    "title": "EL AMOR EN LOS TIEMPOS DEL CÓLERA",
+    "note": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aliquam quasi et rerum expedita autem laudantium voluptatum placeat esse quis quisquam aliquid repellat, odio sequi doloribus. Ducimus totam expedita sunt maxime! Libero et neque sapiente nobis illum inventore, magnam aliquam.",
+    "slug": "penelope-retorna-al-amor"
+  },
+  {
+    "id": 2,
+    "img": "book-banner.png",
+    "title": "HISTORIAS DE AMOR PARA UNA NOCHE DE INVIERNO",
+    "note": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aliquam quasi et rerum expedita autem laudantium voluptatum placeat esse quis quisquam aliquid repellat, odio sequi doloribus. Ducimus totam expedita sunt maxime! Libero et neque sapiente nobis illum inventore, magnam aliquam.",
+    "slug": "penelope-retorna-al-amor"
+  },
+  {
+    "id": 1,
+    "img": "book-banner.png",
+    "title": "PENÉLOPE RETORNA AL AMOR",
+    "note": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aliquam quasi et rerum expedita autem laudantium voluptatum placeat esse quis quisquam aliquid repellat, odio sequi doloribus. Ducimus totam expedita sunt maxime! Libero et neque sapiente nobis illum inventore, magnam aliquam.",
+    "slug": "penelope-retorna-al-amor"
+  }
+]
