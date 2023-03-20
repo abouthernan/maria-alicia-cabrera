@@ -5,5 +5,6 @@ import react from '@astrojs/react'
 export default defineConfig({
   integrations: [react()],
   site: 'https://mariaaliciacabrera.com',
-  base: '/'
+  base: '/',
+  trailingSlash: 'never'
 })
