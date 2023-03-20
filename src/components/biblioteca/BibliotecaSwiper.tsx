@@ -25,7 +25,7 @@ export function BibliotecaSwiper (): JSX.Element {
         <SwiperSlide key={id}>
          <div className={styles.container}>
           <div className={styles.book}>
-            <img className={styles.book__img} src={img} alt="puede ser una caratula de una portada de un libro" />
+            <img className={styles.book__img} src={`/${img}`} alt="puede ser una caratula de una portada de un libro" />
           </div>
           <article className={styles.description}>
             <h2 className={styles.title}>{title}</h2>
