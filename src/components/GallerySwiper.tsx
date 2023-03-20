@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Navigation } from 'swiper'
+import { Pagination, Navigation, Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
@@ -9,14 +9,15 @@ export function GallerySwiper (): JSX.Element {
     <Swiper
       slidesPerView='auto'
       spaceBetween={10}
-      loop={true}
+      loop
       pagination={{ clickable: true, dynamicBullets: true }}
       autoplay={{
-        delay: 1000,
+        delay: 2500,
         disableOnInteraction: false
       }}
       navigation
-      modules={[Pagination, Navigation]}
+      modules={[Pagination, Navigation, Autoplay]}
+      grabCursor
       className='gallerySwiper'
       breakpoints={{
         320: {
