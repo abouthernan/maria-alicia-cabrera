@@ -1,0 +1,81 @@
+---
+import data from '../../tmp/biblioteca.json'
+---
+
+<div class="content">
+  <div class="grid">
+    {data.map(({img, title}) => (
+      <div class="card">
+        <div class="card__pic">
+          <img src={img} alt={`puede ser una imagen de la portada del libro ${title}`} class="card__img">
+        </div>
+        <h2 class="title">{title}</h2>
+        <nav class="navv">
+          <a href="#">Descargar</a>
+        </nav>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .content {
+    background: var(--white);
+  }
+
+  .grid {
+    display: grid;
+    padding: 8rem 0;
+    gap: 2.5rem;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .card__pic {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .card__img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    font-family: var(--font-title);
+    font-size: var(--font-title);
+    margin-bottom: 4rem;
+  }
+
+  .navv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .navv a {
+    font-family: var(--font-body);
+    font-size: var(--font-normal);
+    color: var(--green);
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr))
+    }
+  }
+</style>

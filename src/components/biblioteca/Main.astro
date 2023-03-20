@@ -1,0 +1,50 @@
+---
+import { BibliotecaSwiper } from "./BibliotecaSwiper"
+import GridBiblioteca from "./GridBiblioteca.astro";
+---
+
+<main>
+  <h1>Biblioteca</h1>
+  <section class="section">
+    <BibliotecaSwiper client:load />
+  </section>
+  <GridBiblioteca />
+</main>
+
+<style>
+  main {
+    min-height: 100vh;
+    background: var(--cream);
+  }
+
+  h1 {
+    position: relative;
+    font-size: var(--font-xxl);
+    line-height: 0;
+    margin: 0;
+    padding-top: calc(var(--header) + 2rem);
+    text-align: center;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .section {
+    background: var(--cream);
+    padding: 8rem 0 4rem;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      padding-top: 12rem;
+      text-align: left;
+    }
+
+    .section {
+      padding: 0 0 4rem;
+    }
+    
+  }
+
+</style>
