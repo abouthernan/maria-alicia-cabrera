@@ -1,17 +1,11 @@
 ---
 import { ToggleMenu } from "./ToggleMenu";
+import { Nav } from "./Nav";
 ---
 
 <header class="header">
   <a href="/" class="logo">María Alicia</a>
-  <nav class="nav">
-    <a class="nav__link" href="/">Inicio</a>
-    <a class="nav__link" href="/#sobre-mi">Sobre mí</a>
-    <a class="nav__link" href="/#galeria">Galería</a>
-    <a class="nav__link" href="/biblioteca">Biblioteca</a>
-    <a class="nav__link" href="/articulos">Artículos</a>
-    <a class="nav__link" href="/columnas">Columnas</a>
-  </nav>
+  <Nav client:load /> 
   <ToggleMenu client:load />
 </header>
 
@@ -39,7 +33,7 @@ import { ToggleMenu } from "./ToggleMenu";
     font-size: var(--font-sm);
   }
 
-  .nav {
+  :global(.nav) {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -58,12 +52,12 @@ import { ToggleMenu } from "./ToggleMenu";
     z-index: -1;
   }
 
-  .nav__link {
+  :global(.nav__link) {
     text-decoration: none;
     color: var(--color-text);
   }
 
-  :global(:has(.burger.active)) .nav {
+  :global(:has(.burger.active)) :global(.nav) {
     transform: translateY(0);
   }
 
@@ -82,7 +76,7 @@ import { ToggleMenu } from "./ToggleMenu";
       display: none;
     }
 
-    .nav {
+    :global(.nav) {
       position: static;
       width: auto;
       height: auto;
@@ -94,14 +88,14 @@ import { ToggleMenu } from "./ToggleMenu";
       transform: translateY(0);
     }
 
-    .nav__link {
+    :global(.nav__link) {
       color: var(--black);
       font-size: var(--font-normal);
-      transition: opacity .3s ease-in-out;
+      transition: color .3s ease-in-out;
     }
 
-    .nav__link:hover {
-      opacity: 0.5;
+    :global(.nav__link:hover) {
+      color: var(--green);
     }
   }
 
