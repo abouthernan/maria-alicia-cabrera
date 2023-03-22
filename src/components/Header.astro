@@ -47,6 +47,7 @@ import { Nav } from "./Nav";
     font-family: var(--font-body);
     font-size: var(--font-sm);
     background: var(--white);
+    font-weight: 300;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: -1;
@@ -55,8 +56,6 @@ import { Nav } from "./Nav";
   :global(.nav__link) {
     text-decoration: none;
     color: var(--black);
-    border-right: 1px solid var(--black);
-    padding-right: 1rem;
   }
 
   :global(.nav__link:last-child) {
@@ -98,6 +97,8 @@ import { Nav } from "./Nav";
       color: var(--black);
       font-size: var(--font-normal);
       transition: color .3s ease-in-out;
+      border-right: 1px solid var(--black);
+      padding-right: 1rem;
     }
 
     :global(.nav__link:hover) {
