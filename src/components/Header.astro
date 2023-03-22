@@ -54,7 +54,13 @@ import { Nav } from "./Nav";
 
   :global(.nav__link) {
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--black);
+    border-right: 1px solid var(--black);
+    padding-right: 1rem;
+  }
+
+  :global(.nav__link:last-child) {
+    border-right: none;
   }
 
   :global(:has(.burger.active)) :global(.nav) {
