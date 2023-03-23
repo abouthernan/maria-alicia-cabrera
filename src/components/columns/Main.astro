@@ -1,0 +1,81 @@
+---
+import data from '../../tmp/articles.json'
+---
+
+<article class="content">
+  <h1>Columnas</h1>
+  <div class="grid">
+  {
+      data.map(({ date, title, description }) => (
+      <article class="card">
+        <em class='card__date'>{date}</em>
+        <h2 class='card__title'>{title}</h2>
+        <p class="card__description">{description}</p>
+          <hr/>
+      </article>
+      ))
+  }
+  </div>
+</article>
+
+<style>
+  .content {
+    padding-top: var(--header);
+    margin: 0 auto;
+    background: var(--cream);
+    padding-bottom: 8rem;
+  }
+
+  h1 {
+    line-height: 1;
+    font-size: var(--font-xxl);
+    max-width: 120rem;
+    padding: 0 1rem;
+  }
+
+  .grid {
+    display: grid;
+    padding: 0 1rem;
+    gap: 4rem 2rem;
+    grid-template-columns: 1fr;
+    max-width: 90rem;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 2rem 1rem;
+  }
+
+  .card__date {
+    font-size: var(--font-md);
+    color: var(--green);
+    margin: 1rem 0 0;
+    display: block;
+  }
+
+  .card__title {
+    font-size: var(--font-sm);
+    display: block;
+    font-weight: 600;
+  }
+
+  .card__description {
+    font-size: var(--font-normal);
+    font-family: var(--font-body);
+    margin: 1rem 0;
+    display: block;
+  }
+
+  hr {
+    margin-top: 4rem;
+  }
+
+  @media (min-width: 769px) {
+    .grid {
+      padding: 2rem 4rem;
+    }
+
+    h1 {
+      margin: 4rem auto;
+    }
+  }
+
+</style>
