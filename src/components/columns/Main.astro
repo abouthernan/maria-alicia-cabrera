@@ -1,10 +1,11 @@
 ---
+import 'animate.css';
 import data from '../../tmp/articles.json'
 ---
 
 <article class="content">
-  <h1>Columnas</h1>
-  <div class="grid">
+  <h1 class="animate__animated animate__fadeIn">Columnas</h1>
+  <div class="grid animate__animated animate__fadeIn">
   {
       data.map(({ date, title, description }) => (
       <article class="card">
@@ -42,6 +43,7 @@ import data from '../../tmp/articles.json'
     margin: 0 auto;
     background: var(--white);
     padding: 2rem 1rem;
+    animation-delay: .5s;
   }
 
   .card__date {
