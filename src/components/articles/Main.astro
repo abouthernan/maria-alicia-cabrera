@@ -1,0 +1,96 @@
+---
+import data from '../../tmp/articles.json'
+---
+
+<article class="content">
+  <h1>Artículos</h1>
+  <div class="grid">
+  {
+      data.map(({ image, date, title, description }) => (
+      <article class="card">
+        <div class="card__content-img">
+          <img class="card__img" src={image} alt="puede ser una fotografía de un artículo de maría alicia cabrera" />
+        </div>
+        <em class='card__date'>{date}</em>
+        <h2 class='card__title'>{title}</h2>
+        <p class="card__description">{description}</p>
+      </article>
+      ))
+  }
+  </div>
+</article>
+
+<style>
+  .content {
+    padding-top: var(--header);
+    max-width: 120rem;
+    margin: 0 auto 4rem;
+  }
+
+  h1 {
+    line-height: 1;
+    font-size: var(--font-xxl);
+    margin: 4rem 0;
+  }
+
+  .grid {
+    display: grid;
+    padding: 0 1rem;
+    gap: 4rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+
+  .card {
+    width: 100%;
+    /* max-width: 50rem; */
+    height: auto;
+  }
+
+  .card__content-img {
+    max-width: 100%;
+  }
+
+  .card:first-child {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card:first-child .card__content-img {
+    max-width: 100%;
+  }
+
+  .card__img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card__date {
+    font-size: var(--font-normal);
+    color: var(--green);
+    margin: 1rem 0 0;
+    display: block;
+  }
+
+  .card__title {
+    font-size: var(--font-sm);
+    display: block;
+  }
+
+  .card__description {
+    font-size: var(--font-normal);
+    font-family: var(--font-body);
+    margin: 1rem 0;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    }
+  }
+
+</style>

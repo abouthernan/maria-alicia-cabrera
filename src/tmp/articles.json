@@ -1,0 +1,32 @@
+[
+  {
+    "image": "articles/art-1.png",
+    "date": "27 de febrero 2023",
+    "title": "Lorem ipsum dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum quis nisi in finibus. Aenean posuere lacus vitae pellentesque malesuada. Suspendisse tempus eu dui quis lobortis. Phasellus posuere nibh sapien, convallis lacinia dui aliquam fringilla. Nunc rhoncus ante nibh, vel fermentum turpis lacinia egestas. Praesent tortor lectus, ornare non leo dapibus, tincidunt feugiat diam. Pellentesque aliquam odio libero, quis pulvinar elit fringilla id. Nunc sit amet elementum lectus, eu maximus urna. Integer condimentum aliquet enim, a faucibus risus facilisis ornare. Proin vitae maximus urna. Fusce sodales tempor sem, non pretium augue tincidunt et. Sed feugiat euismod quam, non ullamcorper tortor pharetra tristique. Proin lacinia orci nunc, quis facilisis magna viverra a. Praesent sodales orci tortor, et fringilla tellus tempor nec. Etiam justo arcu, dignissim ut elementum eget, egestas non mauris."
+  },
+  {
+    "image": "articles/art-2.png",
+    "date": "27 de febrero 2023",
+    "title": "Lorem ipsum dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum quis nisi in finibus. Aenean posuere lacus vitae pellentesque malesuada. Suspendisse tempus eu dui quis lobortis. Phasellus posuere nibh sapien, convallis lacinia dui aliquam fringilla. Nunc rhoncus ante nibh, vel fermentum turpis lacinia egestas. Praesent tortor lectus, ornare non leo dapibus, tincidunt feugiat diam. Pellentesque aliquam "
+  },
+  {
+    "image": "articles/art-3.png",
+    "date": "27 de febrero 2023",
+    "title": "Lorem ipsum dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum quis nisi in finibus. Aenean posuere lacus vitae pellentesque malesuada. Suspendisse tempus eu dui quis lobortis. Phasellus posuere nibh sapien, convallis lacinia dui aliquam fringilla. Nunc rhoncus ante nibh, vel fermentum turpis lacinia egestas. Praesent tortor lectus, ornare non leo dapibus, tincidunt feugiat diam. Pellentesque aliquam "
+  },
+  {
+    "image": "articles/art-4.png",
+    "date": "27 de febrero 2023",
+    "title": "Lorem ipsum dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum quis nisi in finibus. Aenean posuere lacus vitae pellentesque malesuada. Suspendisse tempus eu dui quis lobortis. Phasellus posuere nibh sapien, convallis lacinia dui aliquam fringilla. Nunc rhoncus ante nibh, vel fermentum turpis lacinia egestas. Praesent tortor lectus, ornare non leo dapibus, tincidunt feugiat diam. Pellentesque aliquam "
+  },
+  {
+    "image": "articles/art-5.png",
+    "date": "27 de febrero 2023",
+    "title": "Lorem ipsum dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum quis nisi in finibus. Aenean posuere lacus vitae pellentesque malesuada. Suspendisse tempus eu dui quis lobortis. Phasellus posuere nibh sapien, convallis lacinia dui aliquam fringilla. Nunc rhoncus ante nibh, vel fermentum turpis lacinia egestas. Praesent tortor lectus, ornare non leo dapibus, tincidunt feugiat diam. Pellentesque aliquam "
+  }
+]
