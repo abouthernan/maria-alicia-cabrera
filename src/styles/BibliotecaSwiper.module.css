@@ -79,4 +79,8 @@
     width: 100%;
     justify-content: flex-end;
   }
+
+  .description {
+    margin-right: 3rem;
+  }
 }

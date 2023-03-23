@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Navigation, EffectFade, Autoplay } from 'swiper'
+import { Pagination, Navigation, Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import 'swiper/css/effect-fade'
 import styles from '../../styles/BibliotecaSwiper.module.css'
 import data from '../../tmp/biblioteca.json'
 
@@ -12,13 +11,14 @@ export function BibliotecaSwiper (): JSX.Element {
     <Swiper
       spaceBetween={30}
       slidesPerView={1}
+      centeredSlides
+      centeredSlidesBounds
       loop
       pagination={{ clickable: true, dynamicBullets: true }}
       grabCursor
-      autoplay={{ delay: 2500, disableOnInteraction: false }}
-      effect='fade'
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       navigation
-      modules={[Pagination, Navigation, EffectFade, Autoplay]}
+      modules={[Pagination, Navigation, Autoplay]}
       className='bibliotecaSwiper'
     >
     {data.map(({ id, img, title, note, slug }) => (

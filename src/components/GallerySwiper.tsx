@@ -9,10 +9,10 @@ export function GallerySwiper (): JSX.Element {
     <Swiper
       slidesPerView='auto'
       spaceBetween={30}
-      loop={true}
+      loop
       pagination={{ clickable: true, dynamicBullets: true }}
-      centeredSlides={true}
-      centeredSlidesBounds={true}
+      centeredSlides
+      centeredSlidesBounds
       autoplay={{
         delay: 2500,
         disableOnInteraction: false
