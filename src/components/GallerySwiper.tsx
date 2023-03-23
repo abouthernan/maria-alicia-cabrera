@@ -8,9 +8,11 @@ export function GallerySwiper (): JSX.Element {
   return (
     <Swiper
       slidesPerView='auto'
-      spaceBetween={10}
-      loop
+      spaceBetween={30}
+      loop={true}
       pagination={{ clickable: true, dynamicBullets: true }}
+      centeredSlides={true}
+      centeredSlidesBounds={true}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false
@@ -19,22 +21,6 @@ export function GallerySwiper (): JSX.Element {
       modules={[Pagination, Navigation, Autoplay]}
       grabCursor
       className='gallerySwiper'
-      breakpoints={{
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-          centeredSlides: true
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-          centeredSlides: true
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        }
-      }}
     >
       <SwiperSlide>
         <div className="gallery__content-img">
