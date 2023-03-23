@@ -9,7 +9,7 @@ import data from '../../tmp/articles.json'
       data.map(({ image, date, title, description }) => (
       <article class="card">
         <div class="card__content-img">
-          <img class="card__img" src={image} alt="puede ser una fotografía de un artículo de maría alicia cabrera" />
+          <img class="card__img" src={`/${image}`} alt="puede ser una fotografía de un artículo de maría alicia cabrera" />
         </div>
         <em class='card__date'>{date}</em>
         <h2 class='card__title'>{title}</h2>
