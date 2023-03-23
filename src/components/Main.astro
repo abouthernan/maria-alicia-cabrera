@@ -88,6 +88,11 @@ import 'animate.css';
     text-decoration: none;
     padding: 1rem 2rem;
     animation: scrollDown 1.5s infinite;
+    transition: opacity .5s;
+  }
+
+  :global(:has(.burger.active)) .scroll {
+    opacity: 0;
   }
 
   .scroll::after {
