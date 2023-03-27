@@ -1,17 +1,20 @@
 ---
+import { formatDate } from '../../utils'
+import type { ArticleType } from './../../types'
 import 'animate.css';
-import data from '../../tmp/articles.json'
+const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/articulos?populate=image`)
+const { data } = await response.json()
 ---
 
 <article class="content">
   <h1 class="animate__animated animate__fadeIn">Columnas</h1>
   <div class="grid animate__animated animate__fadeIn">
   {
-      data.map(({ date, title, description }) => (
+      data.map((item: ArticleType) => (
       <article class="card">
-        <em class='card__date'>{date}</em>
-        <h2 class='card__title'>{title}</h2>
-        <p class="card__description">{description}</p>
+        <em class='card__date'>{formatDate(item.attributes.createdAt)}</em>
+        <h2 class='card__title'>{item.attributes.title}</h2>
+        <p class="card__description">{item.attributes.description}</p>
           <hr/>
       </article>
       ))

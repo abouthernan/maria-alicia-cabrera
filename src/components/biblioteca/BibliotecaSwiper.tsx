@@ -1,12 +1,12 @@
+import type { BooksType } from '../../types'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation, Autoplay } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import styles from '../../styles/BibliotecaSwiper.module.css'
-import data from '../../tmp/biblioteca.json'
 
-export function BibliotecaSwiper (): JSX.Element {
+export function BibliotecaSwiper ({ data }): JSX.Element {
   return (
     <Swiper
       spaceBetween={30}
@@ -21,18 +21,21 @@ export function BibliotecaSwiper (): JSX.Element {
       modules={[Pagination, Navigation, Autoplay]}
       className='bibliotecaSwiper'
     >
-    {data.map(({ id, img, title, note, slug }) => (
-        <SwiperSlide key={id}>
+    {data?.map((item: BooksType) => (
+        <SwiperSlide key={item.id}>
          <div className={styles.container}>
           <div className={styles.book}>
-            <img className={styles.book__img} src={`/${img}`} alt="puede ser una caratula de una portada de un libro" />
+            <img
+                className={styles.book__img}
+                src={`${import.meta.env.PUBLIC_API_URL}${item.attributes.image.data.attributes.url}`}
+                alt={`puede ser una caratula de una portada del libro ${item.attributes.title} de maria alicia cabrera`} />
           </div>
           <article className={styles.description}>
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={styles.title}>{item.attributes.title}</h2>
             <h3 className={styles.subtitle}>Nota de la autora</h3>
-            <p className={styles.note}>{note}</p>
+            <p className={styles.note}>{item.attributes.description}</p>
             <nav className={styles.nav}>
-              <a href={slug}>Descargar</a>
+              <a href={`${import.meta.env.PUBLIC_API_URL}${item.attributes.pdf.data.attributes.url}`} target="_blank" rel="noreferrer">Descargar</a>
               <a href="#more">Ver más libros</a>
             </nav>
           </article>

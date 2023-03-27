@@ -1,15 +1,22 @@
+---
+const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/home-banner?populate=image`)
+const data = await response.json()
+const { title, description, image, slug } = data.data.attributes
+const srcImage = `${import.meta.env.PUBLIC_API_URL}${image.data.attributes.url}`
+---
+
 <section class="section">
   <div class="container">
     <div class="book">
-      <img src="book-banner.png" alt="puede ser una caratula de una portada de un libro" class="book__img">
+      <img src={srcImage} alt="puede ser una caratula de una portada de un libro" class="book__img">
     </div>
     <article class="description">
-      <h2 class="title">PENÉLOPE RETORNA AL AMOR</h2>
+      <h2 class="title">{title}</h2>
       <h3 class="subtitle">Nota de la autora</h3>
-      <p class="note">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aliquam quasi et rerum expedita autem laudantium voluptatum placeat esse quis quisquam aliquid repellat, odio sequi doloribus. Ducimus totam expedita sunt maxime! Libero et neque sapiente nobis illum inventore, magnam aliquam.</p>
+      <p class="note">{description}</p>
       <nav class="nav">
         <a href="#">Descargar</a>
-        <a href="#">Ver más libros</a>
+        <a href="/biblioteca">Ver más libros</a>
       </nav>
     </article>
   </div>

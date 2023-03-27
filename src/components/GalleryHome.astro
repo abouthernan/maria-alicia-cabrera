@@ -1,10 +1,12 @@
 ---
 import { GallerySwiper } from "./GallerySwiper"
+const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/articulos?populate=image`)
+const { data } = await response.json()
 ---
 
 <section class="section container" id="galeria">
   <h2 class="title">Galería</h2>
-  <GallerySwiper client:visible />
+  <GallerySwiper client:load data={data} />
 </section>
 
 <style>
@@ -29,7 +31,6 @@ import { GallerySwiper } from "./GallerySwiper"
   :global(.gallerySwiper .gallery__content-img) {
     width: 30rem;
     height: 30rem;
-    object-fit: cover;
   }
 
 
@@ -37,7 +38,8 @@ import { GallerySwiper } from "./GallerySwiper"
     width: 100%;
     height: 100%;
     aspect-ratio: 1/1;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
   }
 
   :global(.gallerySwiper .gallery__date) {
