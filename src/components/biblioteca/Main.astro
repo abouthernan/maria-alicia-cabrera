@@ -1,6 +1,5 @@
 ---
 import 'animate.css';
-import type { BooksType } from '../../types'
 import { BibliotecaSwiper } from "./BibliotecaSwiper"
 import GridBiblioteca from "./GridBiblioteca.astro";
 const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/libros?populate=*`)
@@ -8,7 +7,7 @@ const { data } = await response.json()
 ---
 
 <main>
-  <h1 class="animate__animated animate__fadeIn">Biblioteca</h1>
+  <h1 class="animate__animated animate__fadeIn">Mis obras</h5>
   <section class="section animate__animated animate__fadeIn">
     <BibliotecaSwiper client:load data={data} />
   </section>
