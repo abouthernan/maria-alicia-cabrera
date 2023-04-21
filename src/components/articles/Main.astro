@@ -14,7 +14,7 @@ const { data } = await response.json()
       <div class="card__content-img">
         <img
           class="card__img"
-          src={`${import.meta.env.PUBLIC_API_URL}${articulo.attributes.image.data.attributes.url}`}
+          src={articulo.attributes.image.data.attributes.url}
           alt={`puede ser una fotografía de un artículo de ${articulo.attributes.title}`} />
       </div>
       <em class='card__date'>{formatDate(articulo.attributes.createdAt)}</em>

@@ -27,7 +27,7 @@ export function BibliotecaSwiper ({ data }): JSX.Element {
           <div className={styles.book}>
             <img
                 className={styles.book__img}
-                src={`${import.meta.env.PUBLIC_API_URL}${item.attributes.image.data.attributes.url}`}
+                src={item.attributes.image.data.attributes.url}
                 alt={`puede ser una caratula de una portada del libro ${item.attributes.title} de maria alicia cabrera`} />
           </div>
           <article className={styles.description}>

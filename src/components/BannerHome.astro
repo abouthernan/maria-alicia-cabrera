@@ -1,8 +1,8 @@
 ---
 const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/home-banner?populate=image`)
 const data = await response.json()
-const { title, description, image, slug } = data.data.attributes
-const srcImage = `${import.meta.env.PUBLIC_API_URL}${image.data.attributes.url}`
+const { title, description, image, pdf } = data.data.attributes
+const srcImage = image.data.attributes.url
 ---
 
 <section class="section">
@@ -15,7 +15,7 @@ const srcImage = `${import.meta.env.PUBLIC_API_URL}${image.data.attributes.url}`
       <h3 class="subtitle">Nota de la autora</h3>
       <p class="note">{description}</p>
       <nav class="nav">
-        <a href="#">Descargar</a>
+        <a href={pdf}>Descargar</a>
         <a href="/biblioteca">Ver más libros</a>
       </nav>
     </article>

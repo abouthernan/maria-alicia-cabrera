@@ -12,7 +12,7 @@ const { data } = Astro.props
       <div class="card">
         <div class="card__pic">
           <img
-          src={`${import.meta.env.PUBLIC_API_URL}${item.attributes.image.data.attributes.url}`}
+          src={item.attributes.image.data.attributes.url}
           alt={`puede ser una imagen de la portada del libro ${item.attributes.title}`}
           class="card__img">
         </div>

@@ -35,7 +35,7 @@ export function GallerySwiper ({ data }: Props): JSX.Element {
           <div className="gallery__content-img">
             <img
               className="gallery__img"
-              src={`${import.meta.env.PUBLIC_API_URL}${item.attributes.image.data.attributes.url}`}
+              src={item.attributes.image.data.attributes.url}
               alt={`puede ser una foto del artículo ${item.attributes.title}`}/>
           </div>
           <em className='gallery__date'>{formatDate(item.attributes.createdAt)}</em>
