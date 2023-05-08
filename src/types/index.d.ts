@@ -38,5 +38,5 @@ interface BooksTypeAttributes {
   publishedAt: Date
   slug: string
   image: Image
-  pdf: Image
+  PDF: string
 }

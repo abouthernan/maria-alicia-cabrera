@@ -35,7 +35,7 @@ export function BibliotecaSwiper ({ data }): JSX.Element {
             <h3 className={styles.subtitle}>Nota de la autora</h3>
             <p className={styles.note}>{item.attributes.description}</p>
             <nav className={styles.nav}>
-              <a href={`${import.meta.env.PUBLIC_API_URL}${item.attributes.pdf.data.attributes.url}`} target="_blank" rel="noreferrer">Descargar</a>
+              <a href={item.attributes.PDF} target="_blank" rel="noreferrer">Descargar</a>
               <a href="#more">Ver más libros</a>
             </nav>
           </article>

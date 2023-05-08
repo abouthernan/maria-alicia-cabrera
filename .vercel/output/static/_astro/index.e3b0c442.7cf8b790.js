@@ -1,0 +1,1 @@
+const t="_container_nbmty_1",n="_book_nbmty_7",o="_book__img_nbmty_15",_="_title_nbmty_22",i="_subtitle_nbmty_27",s="_note_nbmty_31",c="_nav_nbmty_35",e="_description_nbmty_83",b={container:t,book:n,book__img:o,title:_,subtitle:i,note:s,nav:c,description:e};export{b as s};

@@ -1,0 +1,1 @@
+{"version":3,"routes":[{"src":"/\\/biblioteca/","headers":{"Location":"/biblioteca"},"status":308},{"src":"/\\/articulos/","headers":{"Location":"/articulos"},"status":308},{"src":"/\\/columnas/","headers":{"Location":"/columnas"},"status":308},{"handle":"filesystem"},{"src":"/.*","dest":"render"}]}
