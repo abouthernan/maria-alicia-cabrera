@@ -1,14 +1,17 @@
+---
+const API_URL = import.meta.env.MODE === 'development' ? 'http://localhost:1338/api/about-me' : `${import.meta.env.PUBLIC_API_URL}/api/about-me`
+const response = await fetch(API_URL)
+const data = await response.json()
+const { Name, Description } = data.data.attributes
+---
+
 <section class="aboutme container" id="sobre-mi">
   <div class="profile">
     <img class="profile__img" src="profile-about.png" alt="María Alicia Cabrera Mejía" />
   </div>
   <article class="content">
-    <h3 class="name">María Alicia Cabrera Mejía</h3>
-    <p class="description">Nació en Socha – Boyacá. Poeta, escritora, abogada y periodista. Miembro de la Academia Boyacense de la Lengua, expresidenta del Centro Poético Colombiano y Socia Honoraria de El Pequeño Parnaso.
-
-Adelantó estudios de Comunicación Social y Periodismo en la Universidad de la Sabana, Derecho y Ciencias Políticas en la Universidad Católica de Colombia. Se especializó en Derecho Administrativo en el Colegio Mayor de Nuestra Señora del Rosario. Realizó el postgrado Desarrollo del Talento Humano para el Siglo XXI con la Universidad del Valle. Magister en Escrituras Creativas de la Universidad Nacional.
-
-Diplomado en Escritura Creativa en el Instituto Caro y Cuervo. Asistente al Taller de escritores de la Universidad Central. Servidora pública durante 25 años. Fundadora y Directora de la Fundación Trabajo Común durante 14 años. Vicepresidenta de la Confederación Democrática de Pensionados CDP.</p>
+    <h3 class="name">{Name}</h3>
+    <p class="description">{Description}</p>
 
     <hr>
     <h4 class="awards">condecoraciones</h4>
@@ -51,32 +54,6 @@ Diplomado en Escritura Creativa en el Instituto Caro y Cuervo. Asistente al Tall
     position: relative;
   }
 
-  .profile::before {
-    content: '';
-    width: 10rem;
-    height: 10rem;
-    position: absolute;
-    top: 0;
-    left: 17rem;
-    background-image: url('../profile-hand.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .profile::after {
-    content: '';
-    width: 10rem;
-    height: 10rem;
-    position: absolute;
-    top: 18rem;
-    left: -3rem;
-    background-image: url('../profile-glass.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   .profile__img {
     width: 100%;
     height: 100%;
@@ -99,6 +76,7 @@ Diplomado en Escritura Creativa en el Instituto Caro y Cuervo. Asistente al Tall
     white-space: pre-wrap;
     max-width: 75ch;
     margin: auto;
+    text-align: justify;
   }
 
   hr {
@@ -165,7 +143,7 @@ Diplomado en Escritura Creativa en el Instituto Caro y Cuervo. Asistente al Tall
     }
 
     .profile {
-      margin-top: -8rem;
+      margin-top: -15rem;
       margin-left: -3rem;
       width: 35rem;
       height: 35rem;
@@ -195,7 +173,7 @@ Diplomado en Escritura Creativa en el Instituto Caro y Cuervo. Asistente al Tall
 
     .description {
       font-size: var(--font-normal);
-      text-align: left;
+      text-align: justify;
       max-width: 75ch;
       margin: 2rem 0 0;
       z-index: 1;
