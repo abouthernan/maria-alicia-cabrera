@@ -12,7 +12,6 @@ const srcImage = image.data.attributes.url
     </div>
     <article class="description">
       <h2 class="title">{title}</h2>
-      <h3 class="subtitle">Nota de la autora</h3>
       <p class="note">{description}</p>
       <nav class="nav">
         <a href={PDF}>Descargar</a>
@@ -52,12 +51,9 @@ const srcImage = image.data.attributes.url
     text-align: center;
   }
 
-  .subtitle {
-    text-align: left;
-  }
-
   .note {
     font-family: var(--font-body);
+    text-align: justify;
   }
 
   .nav {
