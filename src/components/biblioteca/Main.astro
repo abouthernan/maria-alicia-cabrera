@@ -7,11 +7,11 @@ const { data } = await response.json()
 ---
 
 <main>
-  <h1 class="animate__animated animate__fadeIn">Mis obras</h5>
+  <h1 class="animate__animated animate__fadeIn">Mis libros</h5>
+  <GridBiblioteca data={data} />
   <section class="section animate__animated animate__fadeIn">
     <BibliotecaSwiper client:load data={data} />
   </section>
-  <GridBiblioteca data={data} />
 </main>
 
 <style>
@@ -25,11 +25,12 @@ const { data } = await response.json()
     font-size: var(--font-xxl);
     line-height: 0;
     margin: 0;
-    padding-top: calc(var(--header) + 2rem);
+    padding-top: var(--header);
     text-align: center;
     max-width: 120rem;
     margin: 0 auto;
     z-index: 1;
+    top: 4.5rem;
   }
 
   .section {
@@ -42,7 +43,7 @@ const { data } = await response.json()
 
   @media (min-width: 768px) {
     h1 {
-      padding-top: 12rem;
+      top: 7rem;
       text-align: left;
     }
 

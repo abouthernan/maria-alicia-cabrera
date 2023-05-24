@@ -11,7 +11,7 @@ export function Nav (): JSX.Element {
     <a className="nav__link" onClick={toggle} href="/">Inicio</a>
     <a className="nav__link" onClick={toggle} href="/#sobre-mi">Sobre mí</a>
     <a className="nav__link" onClick={toggle} href="/#galeria">Galería</a>
-    <a className="nav__link" onClick={toggle} href="/biblioteca">Mis obras</a>
+    <a className="nav__link" onClick={toggle} href="/biblioteca">Mis libros</a>
     <a className="nav__link" onClick={toggle} href="/articulos">Artículos</a>
     <a className="nav__link" onClick={toggle} href="/columnas">Columnas</a>
   </nav>

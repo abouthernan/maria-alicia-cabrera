@@ -32,7 +32,6 @@ export function BibliotecaSwiper ({ data }): JSX.Element {
           </div>
           <article className={styles.description}>
             <h2 className={styles.title}>{item.attributes.title}</h2>
-            <h3 className={styles.subtitle}>Nota de la autora</h3>
             <p className={styles.note}>{item.attributes.description}</p>
             <nav className={styles.nav}>
               <a href={item.attributes.PDF} target="_blank" rel="noreferrer">Descargar</a>

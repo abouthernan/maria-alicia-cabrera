@@ -2,6 +2,7 @@
   display: grid;
   max-width: 120rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .book {
@@ -22,14 +23,13 @@
 .title {
   font-size: var(--font-sm);
   text-align: center;
-}
-
-.subtitle {
-  text-align: left;
+  font-weight: 600;
 }
 
 .note {
   font-family: var(--font-body);
+  margin-bottom: 3rem;
+  text-align: justify;
 }
 
 .nav {
@@ -50,6 +50,7 @@
 :global(.bibliotecaSwiper .swiper-button-prev),
 :global(.bibliotecaSwiper .swiper-button-next) {
   color: var(--green);
+  display: none;
 }
 
 :global(.bibliotecaSwiper .swiper-pagination-bullet) {
@@ -74,6 +75,10 @@
     font-weight: 600;
   }
 
+  .note {
+    max-width: 500px;
+  }
+
   .nav {
     column-gap: 2rem;
     width: 100%;
@@ -82,5 +87,9 @@
 
   .description {
     margin-right: 3rem;
+  }
+  :global(.bibliotecaSwiper .swiper-button-prev),
+  :global(.bibliotecaSwiper .swiper-button-next) {
+    display: block;
   }
 }

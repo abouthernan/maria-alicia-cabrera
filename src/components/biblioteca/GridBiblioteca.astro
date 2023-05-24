@@ -65,7 +65,10 @@ const { data } = Astro.props
   .title {
     font-family: var(--font-title);
     font-size: var(--font-title);
+    margin-top: 3rem;
     margin-bottom: 4rem;
+    text-align: center;
+    font-weight: 600;
   }
 
   .navv {
@@ -85,7 +88,8 @@ const { data } = Astro.props
 
   @media (min-width: 768px) {
     .grid {
-      grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr))
+      grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+      padding: 14rem 0 8rem;
     }
   }
 </style>
