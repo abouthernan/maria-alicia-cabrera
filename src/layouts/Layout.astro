@@ -1,8 +1,8 @@
 ---
-import Metatags from '../components/Metatags.astro';
+import Metatags from "../components/Metatags.astro";
 
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,114 +10,116 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <Metatags/>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="sitemap" href="sitemap-index.xml">
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+    <Metatags />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="sitemap" href="sitemap-index.xml" />
+  </head>
+  <body>
+    <slot />
+  </body><style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond:wght@300&family=Open+Sans&display=swap");
 
-<style is:global>
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond:wght@300&family=Open+Sans&display=swap');
-
-  html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
-  :root {
-    /* font family */
-    --font-title: 'Cinzel', serif;
-    --font-coursive: 'Cormorant Garamond', serif;
-    --font-body: 'Open Sans', sans-serif;
-    /* font sizes */
-    --font-xxl: 3rem;
-    --font-xl: 4.5rem;
-    --font-lg: 3.5rem;
-    --font-md: 2.8rem;
-    --font-sm: 2.4rem;
-    --font-normal: 1.6rem;
-    --font-xs: 1.1rem;
-    /* colours */
-    --black: #000000;
-    --cream: #dfdccf;
-    --white: #f5f5f5;
-    --grey: #a6a6a6;
-    --green: #6A5921;
-    --header: 60px;
-  }
-
-  @media (min-width: 768px) {
-    :root {
-      --font-xxl: 6.5rem;
+    html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      scroll-behavior: smooth;
     }
-  }
 
-  body {
-    font-size: 1.6rem;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
 
-  h1,h2,h3,h4,h5,h6 {
-    font-family: var(--font-title);
-    font-weight: 400;
-  }
+    :root {
+      /* font family */
+      --font-title: "Cinzel", serif;
+      --font-coursive: "Cormorant Garamond", serif;
+      --font-body: "Open Sans", sans-serif;
+      /* font sizes */
+      --font-xxl: 3rem;
+      --font-xl: 4.5rem;
+      --font-lg: 3.5rem;
+      --font-md: 2.8rem;
+      --font-sm: 2.4rem;
+      --font-normal: 1.6rem;
+      --font-xs: 1.1rem;
+      /* colours */
+      --black: #000000;
+      --cream: #dfdccf;
+      --white: #f5f5f5;
+      --grey: #a6a6a6;
+      --green: #6a5921;
+      --header: 60px;
+    }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+    @media (min-width: 768px) {
+      :root {
+        --font-xxl: 6.5rem;
+      }
+    }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    body {
+      font-size: 1.6rem;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-  img {
-    max-width: 100%;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-title);
+      font-weight: 400;
+    }
 
-  .container {
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  ::-webkit-scrollbar {
-    width: 1rem;
-  }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-  ::-webkit-scrollbar-track {
-    background: var(--black);
-  }
+    img {
+      max-width: 100%;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--cream);
-    transition: background .2s ease;
-  }
+    .container {
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--grey);
-  }
+    ::-webkit-scrollbar {
+      width: 1rem;
+    }
 
-</style>
+    ::-webkit-scrollbar-track {
+      background: var(--black);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--cream);
+      transition: background 0.2s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--grey);
+    }
+  </style>
+</html>

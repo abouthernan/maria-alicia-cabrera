@@ -1,0 +1,150 @@
+---
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+const response = await fetch(
+  `${import.meta.env.PUBLIC_API_URL}/api/galleries?populate=*`
+);
+const { data } = await response.json();
+
+type GalleryCard = {
+  attributes: {
+    Description: string;
+    Media: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+};
+---
+
+<Layout title="Galería - María Alicia Cabrera">
+  <Header />
+  <section class="section">
+    <h1>Galería</h1>
+    <dialog class="modal">
+      <img
+        src=""
+        alt="puede ser una imagen de la galeria de maria alicia cabrera mejia"
+      />
+    </dialog>
+    <div class="grid">
+      {
+        data.map((item: GalleryCard) => (
+          <>
+            <figure class="card">
+              <img src={item.attributes.Media.data.attributes.url} />
+              <figcaption>{item.attributes.Description}</figcaption>
+            </figure>
+          </>
+        ))
+      }
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+  .section {
+    padding-bottom: 5rem;
+  }
+
+  h1 {
+    position: relative;
+    font-size: var(--font-xxl);
+    line-height: 0;
+    margin: 0;
+    padding-top: var(--header);
+    text-align: center;
+    max-width: 120rem;
+    margin: 0 auto;
+    z-index: 1;
+    top: 4.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem 5px;
+    justify-items: center;
+    max-width: 1220px;
+    margin: 10rem auto 0 auto;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .card figcaption {
+    margin-top: 1rem;
+    text-align: center;
+    font-family: var(--font-title);
+    font-weight: 700;
+  }
+
+  .modal {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
+
+  .modal img {
+    display: block;
+    margin: 0 auto;
+    width: 80vw;
+    height: 80vh;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      top: 7rem;
+      text-align: left;
+    }
+
+    .grid {
+      margin-top: 14rem;
+    }
+  }
+</style>
+
+<script lang="javascript">
+  const cards = document.querySelectorAll(".card");
+  const modal = document.querySelector(".modal");
+  const modalImg = document.querySelector(".modal img");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      modalImg.src = card.querySelector("img").src;
+      modal.showModal();
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.close();
+  });
+</script>
