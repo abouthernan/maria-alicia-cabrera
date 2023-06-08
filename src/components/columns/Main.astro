@@ -1,24 +1,34 @@
 ---
-import { formatDate } from '../../utils'
-import type { ArticleType } from './../../types'
-import 'animate.css';
-const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/articulos?populate=image`)
-const { data } = await response.json()
+import { formatDate } from "../../utils";
+import type { ColumnsType } from "./../../types";
+import "animate.css";
+const url = `${import.meta.env.PUBLIC_API_URL}/api/columns`;
+const response = await fetch(url);
+const { data } = await response.json();
+
+const getColumn = async (id: number) => {
+  return await fetch(`${import.meta.env.SITE}/api/${id}`);
+};
 ---
 
 <article class="content">
   <h1 class="animate__animated animate__fadeIn">Columnas</h1>
   <div class="grid animate__animated animate__fadeIn">
-  {
-      data.map((item: ArticleType) => (
-      <article class="card">
-        <em class='card__date'>{formatDate(item.attributes.createdAt)}</em>
-        <h2 class='card__title'>{item.attributes.title}</h2>
-        <p class="card__description">{item.attributes.description}</p>
-          <hr/>
-      </article>
+    {
+      data.map((item: ColumnsType) => (
+        <article class="card">
+          <em class="card__date">{formatDate(item.attributes.publishedAt)}</em>
+          <h2 class="card__title">{item.attributes.title}</h2>
+          <p class="card__description">
+            {item.attributes.description.slice(0, 300)}...
+          </p>
+          <a class="view-more" href={`/columnas/${item.attributes.identifier}`}>
+            Leer más
+          </a>
+          <hr />
+        </article>
       ))
-  }
+    }
   </div>
 </article>
 
@@ -46,7 +56,7 @@ const { data } = await response.json()
     margin: 0 auto;
     background: var(--white);
     padding: 2rem 1rem;
-    animation-delay: .5s;
+    animation-delay: 0.5s;
   }
 
   .card__date {
@@ -69,6 +79,27 @@ const { data } = await response.json()
     display: block;
   }
 
+  .view-more {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--green);
+    font-family: var(--font-coursive);
+    display: flex;
+    margin: 3rem 0;
+    justify-content: flex-end;
+  }
+
+  .view-more::after {
+    content: "→";
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .view-more:hover::after {
+    color: var(--green);
+    transform: translateX(0.3rem);
+  }
+
   hr {
     margin-top: 4rem;
   }
@@ -82,5 +113,4 @@ const { data } = await response.json()
       margin: 4rem auto;
     }
   }
-
 </style>

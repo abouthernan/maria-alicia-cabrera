@@ -1,3 +1,15 @@
+export interface ColumnsType {
+  id: number
+  attributes: ColumnsTypeAttributes
+}
+
+interface ColumnsTypeAttributes {
+  title: string
+  description: string
+  publishedAt: Date
+  identifier: string
+}
+
 export interface ArticleType {
   id: number
   attributes: ArticleTypeAttributes
