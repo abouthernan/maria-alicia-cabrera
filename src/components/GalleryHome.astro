@@ -1,7 +1,9 @@
 ---
-import { GallerySwiper } from "./GallerySwiper"
-const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/articulos?populate=image`)
-const { data } = await response.json()
+import { GallerySwiper } from "./GallerySwiper";
+const response = await fetch(
+  `${import.meta.env.PUBLIC_API_URL}/api/galleries?populate=*`
+);
+const { data } = await response.json();
 ---
 
 <section class="section container" id="galeria">
@@ -32,7 +34,6 @@ const { data } = await response.json()
     width: 30rem;
     height: 30rem;
   }
-
 
   :global(.gallerySwiper .gallery__content-img .gallery__img) {
     width: 100%;
@@ -80,5 +81,4 @@ const { data } = await response.json()
       margin-bottom: 4rem;
     }
   }
-
 </style>
