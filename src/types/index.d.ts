@@ -1,54 +1,55 @@
 export interface ColumnsType {
-  id: number
-  attributes: ColumnsTypeAttributes
+  id: number;
+  attributes: ColumnsTypeAttributes;
 }
 
 interface ColumnsTypeAttributes {
-  title: string
-  description: string
-  publishedAt: Date
-  identifier: string
+  title: string;
+  description: string;
+  publishedAt: Date;
+  identifier: string;
 }
 
 export interface ArticleType {
-  id: number
-  attributes: ArticleTypeAttributes
+  id: number;
+  attributes: ArticleTypeAttributes;
 }
 
 interface ArticleTypeAttributes {
-  title: string
-  description: string
-  createdAt: Date
-  updatedAt: Date
-  publishedAt: Date
-  image: Image
+  title: string;
+  description: string;
+  createdAt: Date;
+  updatedAt: Date;
+  publishedAt: Date;
+  image: Image;
 }
 
 interface Image {
-  data: Data
+  data: Data;
 }
 
 interface Data {
-  attributes: DataAttributes
+  attributes: DataAttributes;
 }
 
 interface DataAttributes {
-  url: string
+  url: string;
 }
 
 // boocks
 export interface BooksType {
-  id: number
-  attributes: BooksTypeAttributes
+  id: number;
+  attributes: BooksTypeAttributes;
 }
 
 interface BooksTypeAttributes {
-  title: string
-  description: string
-  createdAt: Date
-  updatedAt: Date
-  publishedAt: Date
-  slug: string
-  image: Image
-  PDF: string
+  title: string;
+  description: string;
+  createdAt: Date;
+  updatedAt: Date;
+  publishedAt: Date;
+  slug: string;
+  image: Image;
+  spanishVersion: string;
+  englishVersion: string;
 }

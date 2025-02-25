@@ -1,20 +1,28 @@
 ---
-const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/home-banner?populate=image`)
-const data = await response.json()
-const { title, description, image, PDF } = data.data.attributes
-const srcImage = image.data.attributes.url
+const response = await fetch(
+  `${import.meta.env.PUBLIC_API_URL}/api/home-banner?populate=image`
+);
+const data = await response.json();
+const { title, description, image, spanishVersion, englishVersion } =
+  data.data.attributes;
+const srcImage = image.data.attributes.url;
 ---
 
 <section class="section">
   <div class="container">
     <div class="book">
-      <img src={srcImage} alt="puede ser una caratula de una portada de un libro" class="book__img">
+      <img
+        src={srcImage}
+        alt="puede ser una caratula de una portada de un libro"
+        class="book__img"
+      />
     </div>
     <article class="description">
       <h2 class="title">{title}</h2>
       <p class="note">{description}</p>
       <nav class="nav">
-        <a href={PDF}>Descargar</a>
+        {spanishVersion && <a href={spanishVersion}>Descargar en español</a>}
+        {englishVersion && <a href={englishVersion}>Descargar en inglés</a>}
         <a href="/biblioteca">Ver más libros</a>
       </nav>
     </article>
@@ -95,5 +103,4 @@ const srcImage = image.data.attributes.url
       column-gap: 2rem;
     }
   }
-
 </style>

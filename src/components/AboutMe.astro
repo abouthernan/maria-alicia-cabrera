@@ -1,5 +1,5 @@
 ---
-const API_URL = import.meta.env.MODE === 'development' ? 'http://localhost:1338/api/about-me' : `${import.meta.env.PUBLIC_API_URL}/api/about-me`
+const API_URL =  `${import.meta.env.PUBLIC_API_URL}/api/about-me`
 const response = await fetch(API_URL)
 const data = await response.json()
 const { Name, Description } = data.data.attributes

@@ -1,42 +1,39 @@
 ---
-import type { BooksType } from '../../types'
+import type { BooksType } from "../../types";
 export interface Props {
-  data: BooksType[]
+  data: BooksType[];
 }
-const { data } = Astro.props
+const { data } = Astro.props;
 ---
 
 <div class="content" id="more">
   <div class="grid">
-    {data?.map((item: BooksType) => (
-      <div class="card">
-        <div class="card__pic">
-          <img
-            src={item.attributes.image.data.attributes.url}
-            alt={`puede ser una imagen de la portada del libro ${item.attributes.title}`}
-            class="card__img">
+    {
+      data?.map((item: BooksType) => (
+        <div class="card">
+          <div class="card__pic">
+            <img
+              src={item.attributes.image.data.attributes.url}
+              alt={`puede ser una imagen de la portada del libro ${item.attributes.title}`}
+              class="card__img"
+            />
+          </div>
+          <h2 class="title">{item.attributes.title}</h2>
+          <nav class="navv">
+            {item.attributes.spanishVersion && (
+              <a target="_blank" href={item.attributes.spanishVersion}>
+                Leer Libro
+              </a>
+            )}
+            {item.attributes.englishVersion && (
+              <a target="_blank" href={item.attributes.englishVersion}>
+                Leer Libro en Inglés
+              </a>
+            )}
+          </nav>
         </div>
-        <h2 class="title">{item.attributes.title}</h2>
-        <nav class="navv">
-          {item.attributes["Versión en Español"] && (
-            <a
-              target="_blank"
-              href={item.attributes["Versión en Español"]}
-            >
-              Leer Libro
-            </a>
-          )}
-          {item.attributes["Versión en Inglés"] && (
-            <a
-              target="_blank"
-              href={item.attributes["Versión en Inglés"]}
-            >
-              Leer Libro en Inglés
-            </a>
-          )}
-        </nav>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </div>
 
@@ -78,7 +75,7 @@ const { data } = Astro.props
     font-family: var(--font-title);
     font-size: var(--font-title);
     margin-top: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     font-weight: 600;
   }
@@ -87,10 +84,10 @@ const { data } = Astro.props
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    position: absolute;
+    gap: 5px;
     bottom: 0;
     right: 0;
+    margin-bottom: 3rem;
   }
 
   .navv a {
@@ -116,4 +113,3 @@ const { data } = Astro.props
     }
   }
 </style>
-
