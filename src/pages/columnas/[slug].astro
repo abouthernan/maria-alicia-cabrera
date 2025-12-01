@@ -2,21 +2,34 @@
 import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
 import Layout from "../../layouts/Layout.astro";
-const { slug } = Astro.params;
-const url = `${import.meta.env.PUBLIC_API_URL}/api/columns`;
-const columns = await fetch(url);
-const { data } = await columns.json();
 
-const page = data.find((column) => column.attributes.identifier === slug);
-if (!page) return Astro.redirect("/404");
+export async function getStaticPaths() {
+  const url = `${import.meta.env.PUBLIC_API_URL}/api/columns`;
+  const response = await fetch(url);
+  const { data } = await response.json();
+  
+  // Validar que data existe y es un array
+  const columns = Array.isArray(data) ? data : [];
+  
+  return columns.map((column) => ({
+    params: { slug: column.attributes.identifier },
+    props: { column }
+  }));
+}
+
+const { column } = Astro.props;
+const { slug } = Astro.params;
+
+// Si no hay columna, redirigir a 404
+if (!column) return Astro.redirect("/404");
 ---
 
-<Layout title={`${page.attributes.title} - María Alicia Cabrera`}>
+<Layout title={`${column.attributes.title} - María Alicia Cabrera`}>
   <Header />
   <main>
     <article>
-      <h1>{page.attributes.title}</h1>
-      <p>{page.attributes.description}</p>
+      <h1>{column.attributes.title}</h1>
+      <p>{column.attributes.description}</p>
     </article>
   </main>
   <Footer />
