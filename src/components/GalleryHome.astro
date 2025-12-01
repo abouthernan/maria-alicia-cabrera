@@ -1,14 +1,13 @@
 ---
 import { GallerySwiper } from "./GallerySwiper";
-const response = await fetch(
-  `${import.meta.env.PUBLIC_API_URL}/api/galleries?populate=*`
-);
-const { data } = await response.json();
+import { fetchAPI } from "../utils/api";
+
+const { data: galleries } = await fetchAPI('/api/galleries?populate=*')
 ---
 
 <section class="section container" id="galeria">
   <h2 class="title">Galería</h2>
-  <GallerySwiper client:load data={data} />
+  <GallerySwiper client:load data={galleries} />
 </section>
 
 <style>
