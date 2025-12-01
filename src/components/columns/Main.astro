@@ -6,6 +6,9 @@ const url = `${import.meta.env.PUBLIC_API_URL}/api/columns`;
 const response = await fetch(url);
 const { data } = await response.json();
 
+// Validar que data existe y es un array
+const columns = Array.isArray(data) ? data : [];
+
 const getColumn = async (id: number) => {
   return await fetch(`${import.meta.env.SITE}/api/${id}`);
 };
@@ -14,8 +17,8 @@ const getColumn = async (id: number) => {
 <article class="content">
   <h1 class="animate__animated animate__fadeIn">Columnas</h1>
   <div class="grid animate__animated animate__fadeIn">
-    {
-      data.map((item: ColumnsType) => (
+    {columns.length > 0 ? (
+      columns.map((item: ColumnsType) => (
         <article class="card">
           <em class="card__date">{formatDate(item.attributes.publishedAt)}</em>
           <h2 class="card__title">{item.attributes.title}</h2>
@@ -28,7 +31,9 @@ const getColumn = async (id: number) => {
           <hr />
         </article>
       ))
-    }
+    ) : (
+      <p>No hay columnas disponibles en este momento.</p>
+    )}
   </div>
 </article>
 
