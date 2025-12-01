@@ -2,10 +2,14 @@
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+
 const response = await fetch(
   `${import.meta.env.PUBLIC_API_URL}/api/galleries?populate=*`
 );
 const { data } = await response.json();
+
+// Validar que data existe y es un array
+const galleries = Array.isArray(data) ? data : [];
 
 type GalleryCard = {
   attributes: {
@@ -32,8 +36,8 @@ type GalleryCard = {
       />
     </dialog>
     <div class="grid">
-      {
-        data.map((item: GalleryCard) => (
+      {galleries.length > 0 ? (
+        galleries.map((item: GalleryCard) => (
           <>
             <figure class="card">
               <img src={item.attributes.Media.data.attributes.url} />
@@ -41,7 +45,9 @@ type GalleryCard = {
             </figure>
           </>
         ))
-      }
+      ) : (
+        <p>No hay imágenes disponibles en la galería.</p>
+      )}
     </div>
   </section>
   <Footer />
