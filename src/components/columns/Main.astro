@@ -12,6 +12,8 @@ const columns = Array.isArray(data) ? data : [];
 const getColumn = async (id: number) => {
   return await fetch(`${import.meta.env.SITE}/api/${id}`);
 };
+
+const { data: columns } = await fetchAPI('/api/columns');
 ---
 
 <article class="content">
