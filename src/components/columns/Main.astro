@@ -1,26 +1,21 @@
 ---
 import { formatDate } from "../../utils";
+import { fetchAPI } from "../../utils/api";
 import type { ColumnsType } from "./../../types";
 import "animate.css";
-const url = `${import.meta.env.PUBLIC_API_URL}/api/columns`;
-const response = await fetch(url);
-const { data } = await response.json();
 
-// Validar que data existe y es un array
-const columns = Array.isArray(data) ? data : [];
+const { data: columnsData } = await fetchAPI('/api/columns');
 
 const getColumn = async (id: number) => {
   return await fetch(`${import.meta.env.SITE}/api/${id}`);
 };
-
-const { data: columns } = await fetchAPI('/api/columns');
 ---
 
 <article class="content">
   <h1 class="animate__animated animate__fadeIn">Columnas</h1>
   <div class="grid animate__animated animate__fadeIn">
-    {columns.length > 0 ? (
-      columns.map((item: ColumnsType) => (
+    {columnsData.length > 0 ? (
+      columnsData.map((item: ColumnsType) => (
         <article class="card">
           <em class="card__date">{formatDate(item.attributes.publishedAt)}</em>
           <h2 class="card__title">{item.attributes.title}</h2>
