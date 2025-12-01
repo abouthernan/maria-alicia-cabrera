@@ -1,27 +1,32 @@
 ---
 import { formatDate } from '../../utils'
+import { fetchAPI } from '../../utils/api'
 import type { ArticleType } from './../../types'
 import 'animate.css';
-const response = await fetch(`${import.meta.env.PUBLIC_API_URL}/api/articulos?populate=image`)
-const { data } = await response.json()
+
+const { data: articulos } = await fetchAPI('/api/articulos?populate=image')
 ---
 
 <article class="content">
   <h1 class="animate__animated animate__fadeIn">Artículos</h1>
   <div class="grid animate__animated animate__fadeIn">
-  {data?.map((articulo: ArticleType) => (
-    <article class="card">
-      <div class="card__content-img">
-        <img
-          class="card__img"
-          src={articulo.attributes.image.data.attributes.url}
-          alt={`puede ser una fotografía de un artículo de ${articulo.attributes.title}`} />
-      </div>
-      <em class='card__date'>{formatDate(articulo.attributes.createdAt)}</em>
-      <h2 class='card__title'>{articulo.attributes.title}</h2>
-      <p class="card__description">{articulo.attributes.description}</p>
-    </article>
-  ))}
+  {articulos.length > 0 ? (
+    articulos.map((articulo: ArticleType) => (
+      <article class="card">
+        <div class="card__content-img">
+          <img
+            class="card__img"
+            src={articulo.attributes.image.data.attributes.url}
+            alt={`puede ser una fotografía de un artículo de ${articulo.attributes.title}`} />
+        </div>
+        <em class='card__date'>{formatDate(articulo.attributes.createdAt)}</em>
+        <h2 class='card__title'>{articulo.attributes.title}</h2>
+        <p class="card__description">{articulo.attributes.description}</p>
+      </article>
+    ))
+  ) : (
+    <p>No hay artículos disponibles.</p>
+  )}
   </div>
 </article>
 
@@ -48,8 +53,6 @@ const { data } = await response.json()
 
   .card {
     width: 100%;
-    /* max-width: 50rem; */
-    height: auto;
   }
 
   .card__content-img {
