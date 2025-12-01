@@ -1,11 +1,11 @@
 ---
-const response = await fetch(
-  `${import.meta.env.PUBLIC_API_URL}/api/home-banner?populate=image`
-);
-const data = await response.json();
-const { title, description, image, spanishVersion, englishVersion } =
-  data.data.attributes;
-const srcImage = image.data.attributes.url;
+import { fetchAPI } from '../utils/api'
+
+const { data } = await fetchAPI('/api/home-banner?populate=image')
+const banner = data[0] || null
+
+const { title, description, image, spanishVersion, englishVersion } = banner?.attributes || {}
+const srcImage = image?.data?.attributes?.url || '/profile-book.png'
 ---
 
 <section class="section">
@@ -18,8 +18,8 @@ const srcImage = image.data.attributes.url;
       />
     </div>
     <article class="description">
-      <h2 class="title">{title}</h2>
-      <p class="note">{description}</p>
+      <h2 class="title">{title || 'Libros'}</h2>
+      <p class="note">{description || 'Descubre la colección de libros.'}</p>
       <nav class="nav">
         {spanishVersion && <a href={spanishVersion}>Descargar en español</a>}
         {englishVersion && <a href={englishVersion}>Descargar en inglés</a>}
