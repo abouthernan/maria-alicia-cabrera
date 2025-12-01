@@ -6,20 +6,24 @@ export async function fetchAPI(endpoint: string) {
     
     if (!response.ok) {
       console.error(`API Error: ${response.status} ${response.statusText}`)
-      return { data: null, error: true }
+      return { data: [], error: true }  // CAMBIO: Devolver array vacío en lugar de null
     }
     
     const json = await response.json()
     
-    // Asegurar que data siempre sea un array si se espera uno
+    // Asegurar que data siempre sea un array
     if (json.data === null || json.data === undefined) {
       return { data: [], error: false }
     }
     
-    return { data: Array.isArray(json.data) ? json.data : [json.data], error: false }
+    // Si data es un array, devolverlo; si es un objeto, meterlo en un array
+    return { 
+      data: Array.isArray(json.data) ? json.data : [json.data], 
+      error: false 
+    }
   } catch (error) {
     console.error('Fetch error:', error)
-    return { data: [], error: true }
+    return { data: [], error: true }  // CAMBIO: Devolver array vacío en lugar de null
   }
 }
 
