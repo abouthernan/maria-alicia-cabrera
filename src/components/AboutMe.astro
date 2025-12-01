@@ -1,18 +1,10 @@
 ---
-const API_URL =  `${import.meta.env.PUBLIC_API_URL}/api/about-me`
-const response = await fetch(API_URL)
-const data = await response.json()
-const { Name, Description } = data.data.attributes
 import { fetchAPI } from '../utils/api'
 
 const { data } = await fetchAPI('/api/about-me')
 const aboutMe = data[0] || null
 
-if (!aboutMe) {
-  console.error('No se pudo cargar la información de About Me')
-}
-
-const { Name, Description } = aboutMe?.attributes || { Name: '', Description: '' }
+const { Name, Description } = aboutMe?.attributes || { Name: 'María Alicia Cabrera', Description: '' }
 ---
 
 <section class="aboutme container" id="sobre-mi">
